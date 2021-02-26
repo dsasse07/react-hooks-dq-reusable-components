@@ -1,12 +1,13 @@
 import React from "react";
+import PotionTile from "./PotionTile";
 import ShopTile from "./ShopTile";
 
 function Shop({ potions, addToInventory }) {
   const potionList = potions.map((potion) => {
     return (
-      <ShopTile key={potion.id} potion={potion} addToInventory={addToInventory}>
+      <PotionTile key={potion.id} potion={potion} clickAction={addToInventory} type="shop">
         <h4 className="potion-header">{potion.name}</h4>
-      </ShopTile>
+      </PotionTile>
     );
   });
 
